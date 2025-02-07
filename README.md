@@ -16,9 +16,28 @@ source ~/.zshrc
 ```
 ### Installation
 
+#### Build from code
 ```bash
 go build -o kubeswitches main.go && sudo mv kubeswitches /usr/local/bin/
 ```
+
+#### Install a binary from releases
+
+##### for Macos
+```bash
+curl -L https://github.com/eatmore01/kubeswitches/releases/download/v1.0.0/kubeswitches_darwin_amd64 -o kubeswitches
+chmod +x kubeswitches
+sudo mv kubeswitches /usr/local/bin/
+```
+
+##### for Linux
+```bash
+curl -L https://github.com/eatmore01/kubeswitches/releases/download/v1.0.0/kubeswitches_linux_amd64 -o kubeswitches
+chmod +x kubeswitches
+sudo mv kubeswitches /usr/local/bin/
+```
+##### for Windows download manualy the binary from [releases](https://github.com/eatmore01/kubeswitches/releases)
+
 
 #### Verify installation
 
@@ -26,24 +45,24 @@ go build -o kubeswitches main.go && sudo mv kubeswitches /usr/local/bin/
 kubeswitches -h
 ```
 
-### Usage
+## Usage
 
-## for help
+### for help
 ```bash
 kubeswitches -h
 ```
 
-## set a config
+### set a config
 ```bash
 kubeswitches set <configfilename>
 ```
 
-## list configs
+### list configs
 ```bash
 kubeswitches list
 ```
 
-## get current config
+### get current config
 ```bash
 kubeswitches current
 ```
