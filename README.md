@@ -2,12 +2,19 @@
 
 Kubeswitches is a tool to help you switch between different Kubernetes configurations.
 
+- [Requirements](#requirements)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+
 ### Requirements
 
 - `KUBECONFIGS` environment variable set to the path of the kubeconfig file you want to switch between
 - `go` language installed for build the binary
 
-#### Setup kube contexts folder
+####  Prerequisites
+
+- Setup kube contexts folder:
 
 ```bash
 mkdir -p ~/.kube/contexts # example contexts folder who contains all your kube contexts 
