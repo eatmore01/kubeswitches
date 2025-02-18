@@ -18,7 +18,7 @@ Kubeswitches is a tool to help you switch between different Kubernetes configura
 
 ```bash
 mkdir -p ~/.kube/contexts # example contexts folder who contains all your kube contexts 
-echo "export KUBECONFIGS=~/.kube/contexts" >> ~/.zshrc
+echo "export KUBECONFIGS=/Users/eatmore/.kube/contexts" >> ~/.zshrc
 source ~/.zshrc
 ```
 ### Installation
