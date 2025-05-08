@@ -1,5 +1,5 @@
 
-[img](./ne-moya.jpg)
+![img](./ne-moya.jpg)
 
 ## Kubeswitches
 
