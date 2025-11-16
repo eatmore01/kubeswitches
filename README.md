@@ -28,6 +28,8 @@ source ~/.zshrc
 
 #### Build from code
 ```bash
+git clone https://github.com/eatmore01/kubeswitches.git
+cd kubeswitches
 go build -o kubeswitches main.go && sudo mv kubeswitches /usr/local/bin/
 ```
 
