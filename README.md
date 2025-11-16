@@ -3,7 +3,7 @@
 
 ## Kubeswitches
 
-Kubeswitches is a tool to help you switch between different Kubernetes configurations if u dolbaeb and dont use kubectx and one kube config
+Kubeswitches is a tool to help you switch between different Kube configs files and be helpful for testing new clusters before add to main kubeconfig and use kubectx
 
 - [Requirements](#requirements)
 - [Prerequisites](#prerequisites)
