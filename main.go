@@ -82,6 +82,14 @@ var currentCmd = &cobra.Command{
 			return
 		}
 
+		lastConfig := ""
+		configFile := filepath.Join(os.Getenv("HOME"), ".kube", ".last_config")
+		data, err := os.ReadFile(configFile)
+		if err == nil {
+			lastConfig = string(data)
+		}
+
+		fmt.Printf("Current kubeconfig: %v\n", lastConfig)
 		fmt.Println(string(output))
 	},
 }
@@ -110,17 +118,22 @@ var setCmd = &cobra.Command{
 			return
 		}
 
-		// remove existing kube config
 		err = os.Remove(kubeConfigPath)
 		if err != nil && !os.IsNotExist(err) {
 			fmt.Printf("Error removing existing kube config: %v\n", err)
 			return
 		}
 
-		// copy new config
 		err = copyFile(sourcePath, kubeConfigPath)
 		if err != nil {
 			fmt.Printf("Error setting new kube config: %v\n", err)
+			return
+		}
+
+		configFile := filepath.Join(os.Getenv("HOME"), ".kube", ".last_config")
+		err = os.WriteFile(configFile, []byte(configName), 0644)
+		if err != nil {
+			fmt.Printf("Error saving config name: %v\n", err)
 			return
 		}
 
@@ -144,7 +157,6 @@ func copyFile(source, destination string) error {
 	}
 	defer srcFile.Close()
 
-	// ensure the dest folder exists
 	destDir := filepath.Dir(destination)
 	if err := os.MkdirAll(destDir, 0755); err != nil {
 		return err
